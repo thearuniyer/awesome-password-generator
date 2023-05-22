@@ -1,26 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Karla:wght@800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
 
 /* :root {
-    --clr-very-black: #1c1c1c;
-    --clr-bright-green: #55f991;
-    --clr-dark-green: #10b981;
+    --clr-background: #FCF8E8;
+    --clr-alt-title-main: #B25068;
+    --clr-btn: #DF7861;
   
-    --clr-very-dark-blue: #1f2937;
-    --clr-dark-blue: #273549;
-    --clr-medium-grey: #d5d4d8;
+    --clr-container: #ECDFC8;
+    --clr-hr-input: #F8ECD1;
+    --clr-sub-title: #B25068;
   
     --ff-main: "Karla", sans-serif;
     --ff-serif: "Inter", sans-serif;
 } */
 
 :root {
-    --clr-very-black: #1c1c1c;
-    --clr-bright-green: #55f991;
-    --clr-dark-green: #10b981;
+    --clr-background: #1c1c1c;
+    --clr-alt-title-main: #55f991;
+    --clr-btn: #10b981;
   
-    --clr-very-dark-blue: #1f2937;
-    --clr-dark-blue: #273549;
-    --clr-medium-grey: #d5d4d8;
+    --clr-container: #1f2937;
+    --clr-hr-input: #273549;
+    --clr-sub-title: #d5d4d8;
   
     --ff-main: "Karla", sans-serif;
     --ff-serif: "Inter", sans-serif;
@@ -30,38 +33,45 @@
 body {
     font-family: var(--ff-serif);
     color: white;
-    background-color: var(--clr-very-black);
+    background-color: var(--clr-background);
+}
+
+.upper-section {
+    text-align: center;
 }
 
 h1 {
-    font-family: var(--ff-main);
-    font-weight: 800;
+    /* font-family: var(--ff-main); */
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-weight: 400;
     margin: 0.2em 0;
 }
 
 h2 {
-    color: var(--clr-medium-grey);
-    font-size: 1.1em;
+    color: var(--clr-sub-title);
+    font-family: 'Baloo 2', cursive;
+    font-size: 23px;
     font-weight: 400;
     margin-bottom: 1em;
 }
 
+
 hr {
-    background-color: var(--clr-dark-blue);
-    color: var(--clr-dark-blue);
+    background-color: var(--clr-hr-input);
+    color: var(--clr-hr-input);
     height: 2px;
     border: none;
 }
 
 .btn {
-    font-size: 0.95em;
+    font-size: 1em;
     font-weight: 500;
     font-family: var(--ff-serif);
-    background-color: var(--clr-dark-green);
+    background-color: var(--clr-btn);
     color: white;
     border: none;
     border-radius: 0.25em;
-    padding: 0.5em 1em;
+    padding: 0.7em 1.1em;
     margin: 2em 0;
     cursor: pointer;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07),
@@ -76,7 +86,7 @@ hr {
 .btn:hover,
 .btn:focus {
     background-color: white;
-    color: var(--clr-dark-green);
+    color: var(--clr-btn);
     box-shadow: 0 2px 1px rgba(0, 0, 0, 0.09), 
                 0 4px 2px rgba(0, 0, 0, 0.09),
                 0 8px 4px rgba(0, 0, 0, 0.09), 
@@ -93,12 +103,13 @@ main {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    margin: 0 20px;
 }
 
 .container {
     width: min(90%, 33rem);
     padding: 2em;
-    background-color: var(--clr-very-dark-blue);
+    background-color: var(--clr-container);
     border-radius: 0.25em;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 
                 0 2px 4px rgba(0, 0, 0, 0.07),
@@ -108,37 +119,40 @@ main {
                 0 32px 64px rgba(0, 0, 0, 0.07);
 }
 
-.title-green {
-    color: var(--clr-bright-green);
+.title-highlight {
+    color: var(--clr-alt-title-main);
 }
 
 .lower-section {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 1em;
-    margin-top: 1em;
+    /* margin-top: 1em; */
 }
 
 .generated-password {
-    background-color: var(--clr-dark-blue);
+    font-family: 'Inconsolata', monospace;
+    font-size: 25px;
+    background-color: var(--clr-hr-input);
     text-align: center;
     padding: 0.5em 1em;
     border-radius: 0.25em;
-    color: var(--clr-bright-green);
+    color: var(--clr-alt-title-main);
 }
 
 .fa-ellipsis-h {
-    color: var(--clr-very-dark-blue);
+    color: var(--clr-container);
 }
 
 /* make slider color green (tasks left) */
 
 #pwd-slider {
     font-family: var(--ff-serif);
+    color: var(--clr-alt-title-main);
 }
 
 #slider-number {
     font-weight: bolder;
-    color: var(--clr-bright-green);
+    color: var(--clr-alt-title-main);
 }

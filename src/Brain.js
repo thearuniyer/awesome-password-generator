@@ -1,4 +1,3 @@
-
 import { A, N } from "categorized-words";
 
 export const characters = [
@@ -95,24 +94,22 @@ export const characters = [
     "/",
 ];
 
-
 export function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-
 export function leetify(str) {
     const leetChars = {
-        a: '4',
-        e: '3',
-        g: '6',
-        i: '1',
-        o: '0',
-        s: '5',
-        t: '7',
+        a: "4",
+        e: "3",
+        g: "6",
+        i: "1",
+        o: "0",
+        s: "5",
+        t: "7",
     };
 
-    const originalChars = str.split('');
+    const originalChars = str.split("");
 
     let modified = false;
 
@@ -124,9 +121,8 @@ export function leetify(str) {
         return char;
     });
 
-    return leetifiedChars.join('');
+    return leetifiedChars.join("");
 }
-
 
 export function awesomePassword(strength) {
     let passwordLength = strength - 1;
@@ -140,13 +136,18 @@ export function awesomePassword(strength) {
     );
     const randomAdjective =
         filteredAdjectives[Math.floor(Math.random() * filteredAdjectives.length)];
-    return (
-        leetify(capitalizeFirstLetter(randomAdjective)) +
-        "_" +
-        leetify(capitalizeFirstLetter(randomNoun))
-    );
+    
+    if(randomAdjective && randomNoun) {
+        return (
+            leetify(capitalizeFirstLetter(randomAdjective)) +
+            "_" +
+            leetify(capitalizeFirstLetter(randomNoun))
+        );
+    }
+    else {
+        return awesomePassword(strength);
+    }
 }
-
 
 export function genericPassword(strength) {
     let password = "";
@@ -156,6 +157,3 @@ export function genericPassword(strength) {
     }
     return password;
 }
-
-
-

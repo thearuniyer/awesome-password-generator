@@ -6,8 +6,8 @@ import UpperSection from "./components/UpperSection";
 
 function App() {
     
-    const [strength, setStrength] = useState(8);
-    const [passwords, setPasswords] = useState([]);
+    const [ strength, setStrength ] = useState(8);
+    const [ passwords, setPasswords ] = useState([]);
 
     function handleSliderChange(event) {
         setStrength(event.target.value);
@@ -15,10 +15,8 @@ function App() {
 
     function generatePasswords() {
         let password1 = genericPassword(strength);
-        let password2 = genericPassword(strength);
-        let password3 = awesomePassword(strength);
-        let password4 = awesomePassword(strength);
-        setPasswords([password1, password2, password3, password4]);
+        let password2 = awesomePassword(strength);
+        setPasswords([password1, password2]);
     }
  
 
